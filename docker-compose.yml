@@ -9,13 +9,18 @@ services:
     environment:
       - PORT=3000
 
-  users:
+  nats:
+    image: nats
+    ports:
+      - 4222:4222
+
+  users_microservice:
     build: ./microservices/users
     volumes:
       - ./microservices/users/src:/usr/src/app/src
     command: npm run start:dev
 
-  payments:
+  payments_microservice:
     build: ./microservices/payments
     volumes:
       - ./microservices/payments/src:/usr/src/app/src
