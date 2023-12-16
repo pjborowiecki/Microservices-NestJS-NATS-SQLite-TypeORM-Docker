@@ -14,3 +14,9 @@ services:
     volumes:
       - ./microservices/users/src:/usr/src/app/src
     command: npm run start:dev
+
+  payments:
+    build: ./microservices/payments
+    volumes:
+      - ./microservices/payments/src:/usr/src/app/src
+    command: npm run start:dev
