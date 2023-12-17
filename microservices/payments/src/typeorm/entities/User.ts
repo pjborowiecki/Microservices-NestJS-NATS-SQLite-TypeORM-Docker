@@ -7,6 +7,7 @@ import {
 } from 'typeorm';
 
 import { Payment } from 'src/typeorm/entities/Payment';
+
 @Entity({ name: 'users' })
 export class User {
   @PrimaryGeneratedColumn('uuid')
